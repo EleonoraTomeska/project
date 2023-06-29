@@ -1,0 +1,16 @@
+.costumeBg {
+
+    display: center;
+    justify-content: center;
+
+    background-color: #272931;
+    color: rgb(255, 255, 255);
+
+
+    margin: 0 auto;
+    border-radius: 100px;
+
+    background-color: #d2d3d6;
+    box-shadow: inset 5px 5px 21px #131418,
+        inset -5px -5px 21px #4d505e;
+}

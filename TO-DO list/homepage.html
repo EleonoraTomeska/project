@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Homepage</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="homepage.css" />
+</head>
+
+<body class="p-3 m-0 border-0 m-0  ">
+
+    <div class="container mx-5   p-3 my-5 border border-3 border-dark col-4 costumeBg px-5 text-dark bg-opacity-50   ">
+        <div class="btn-group ps-2 my-3">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" id="daily-btn" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                DAILY
+            </button>
+            <ul class="dropdown-menu bg-secondary text-light text-center fs-5" onclick="workBtn()">
+
+            </ul>
+        </div>
+
+        <div class="btn btn-lg btn-secondary my-3" onClick="clearAllBtn()">
+            CLEAR ALL
+        </div>
+
+
+        <div class="btn btn-lg btn-secondary my-3" data-bs-toggle="modal" data-bs-target="#myModal">
+            ADD NEW
+        </div>
+
+        <div id="saved-task">
+
+        </div>
+
+        <div class="modal fade bg-primary bg-opacity-50" id="myModal" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    
+                    <!-- Modal content goes here -->
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold text-primary">Daily To-Do List</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 col-3">
+                            <label for="eventDate" class="form-label fw-bold    ">Date:</label>
+                            <input type="date" class="form-control datepicker" id="event-date" name="eventDate"
+                                required>
+                        </div>
+                        <div class="row">
+                            <div class=" col-2">
+                                <label for="eventTime" class="form-label fw-bold">Time:</label>
+                                <input id="time" type="time" class="form-control" id="eventTime" name="eventTime"
+                                    required>
+                            </div>
+                            <div class=" col-9">
+                                <label for="taskName" class="form-label text-light">/</label>
+                                <input id="input-box" type="text" class="form-control" id="taskName" name="taskName"
+                                    placeholder="Task Name" required>
+                            </div>
+                            <div class="col-2"> </div>
+                            <div class="col-9">
+                                <label for="taskDescription" class="form-label"></label>
+                                <textarea class="form-control" id="taskDescription" name="taskDescription"
+                                    placeholder="Description..." required></textarea>
+                            </div>
+                            <div class="col-9"></div>
+                            <div class="btn btn-secondary col-2 mt-3" onclick="addTask()">Add Task</div>
+
+
+                        </div>
+
+
+
+                        <div id="list-container" class="btn-group-toggle" data-toggle="buttons">
+                            <!-- <div class="pb-3">
+                        <label class="btn btn-secondary ">
+                          <input type="checkbox" autocomplete="off"> 
+                          </label> Task1
+                          </div>
+                          <div class="pb-3"> 
+                          
+                          <label class="btn btn-secondary ">
+                            <input  type="checkbox" autocomplete="off">
+                          -->
+                        </div>
+                        <div id="list-containers" class="btn-group-toggle" data-toggle="buttons" hidden>
+                            <label class="btn btn-secondary ">
+                                <input type="checkbox" autocomplete="off">
+                        </div>
+                        <span id="remove-button" hidden>
+                            <button type="button" class="close border-0 mt-2 p-0" aria-label="Close">
+                                <span aria-hidden="true" class="btn btn-dark">&times;</span>
+                            </button>
+                        </span>
+
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="closeBtns()" id="close-btn"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="saveTasks()"
+                                id="saved-task">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const datepicker = new Datepicker(document.querySelector('.datepicker'), {
+                        format: 'yyyy-mm-dd',
+                        autoclose: true,
+                        todayHighlight: true
+                    })
+                })
+            </script>
+
+
+        </div>
+        <script src="homepage.js" defer></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,71 @@
+#display-area {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, minmax(40px, auto));
+    word-wrap: break-word;
+    padding-bottom: 20px;
+  }
+
+.shadow {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+}
+
+  #display-area .currentInput {
+    justify-content: flex-end;
+    display: flex; 
+    text-align: right;
+    height: 60px;
+    color: white;
+    font-size: 30px;
+    line-height: 2;
+    word-break: break-all;
+    white-space: 100px;
+    overflow-x: auto;
+  }
+  
+  #display-area .answerScreen {
+    text-align: right;
+    color: rgba(150, 150, 150, 0.87);
+    height: 7px;
+    line-height: 3;
+    font-size: 20px;
+  }
+
+  .bg-area {
+    background-color: rgb(46, 45, 50);
+  }
+
+  .keypad-btns {
+    padding: 10px;
+    padding-bottom: 20px;
+    justify-content: center;
+    display: grid;
+    grid: repeat(5, 70px) / repeat(4, 70px);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+  }
+  
+  .keypad-btns button {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    outline: none;
+    border: none;
+    border-radius: 122px;
+    background-color: #5a5a5a;
+    color: #fff;
+    font-size: x-large;
+  }
+  
+  .keypad-btns .fun_btn {
+    color: #000;
+    background:  #19c21f;
+    font-weight: bold;
+  }
+
+  .num_btn:hover {
+    background-color: #363638;
+  }
+  
+  .fun_btn:hover {
+    background-color: #09ff36;
+  }
